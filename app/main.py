@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 
-app = FastAPI()
+from app.routes.info_routes import info_router
 
-@app.get("/")
-def read_root():
-    return {"message": "Hello, World!"}
+app = FastAPI()
+app.include_router(info_router)
